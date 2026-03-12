@@ -2,7 +2,7 @@
   hosts: local
   connection: local
   vars: 
-    num1: 10
+    num1: 30
     num2: 20
     is_valid: true
   tasks:
@@ -12,5 +12,5 @@
       when: num1 > num2
     - name: check is valid or not 
       ansible.builtin.debug:
-        msg: "The condition is not valid"
+        msg: "The condition is  valid"
       when: is_valid
