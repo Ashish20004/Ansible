@@ -15,7 +15,7 @@
       - Docker
       - Kubernetes
   tasks:
-   - Name: print the details
+   - name: print the details
      ansible.builtin.debug:
       msg: |
        program name is {{ PROGRAM }}
