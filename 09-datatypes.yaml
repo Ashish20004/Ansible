@@ -1,0 +1,26 @@
+- name: datatypes
+  hosts: local
+  connection: local
+  vars:
+    PROGRAM: "Devops with AWS"
+    DURATION: 140hrs
+    is_Active: true
+    DETAILS:
+      TRAINER: "Sivakumar"
+      EXPERIENCE: "12 years"
+    TOPICS:
+      - Linux
+      - Shell Scripting
+      - Ansible
+      - Docker
+      - Kubernetes
+  tasks:
+   - Name: print the details
+     ansible.builtin.debug:
+      msg: |
+       program name is {{ PROGRAM }}
+       duration of the program is {{ DURATION }}
+       is the program active? {{ is_Active }}
+       trainer name is {{ DETAILS.TRAINER }}
+       topics covered in the program are {{ TOPICS }} 
+
