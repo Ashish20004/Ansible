@@ -1,0 +1,15 @@
+- name: start package
+  hosts: local
+  connection: local
+  become: yes
+
+  tasks:
+   - name: using  loop to start multiple packages
+     ansible.builtin.package:
+       name: "{{ item.name }}"
+       state: "{{ item.state }}"
+     loop:
+      - { name: "nginx", state: "present" }
+      - { name: "mysql", state: "absent" }
+      - { name: "zip", state: "present" }
+      
