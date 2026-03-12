@@ -6,10 +6,7 @@
         name: nginx
         state: present
 
-- name: start nginx
-  hosts: shell
-  tasks:
-    - NAME: START Nginx
+    - name: start Nginx
       ansible.builtin.service:
         name: nginx
         state: started
