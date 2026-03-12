@@ -5,8 +5,7 @@
     COURSE: "Devsecops"
     DURATION: "4months"
     TRAINER: "SivaKumar"
-    tasks:
+  tasks:
       - name: print course details
         ansible.builtin.debug:
           msg: "Cousre Name: {{ COURSE }} Duration of the course: {{ DURATION   }} Trainer name is: {{ TRAINER }} }}"
-          
