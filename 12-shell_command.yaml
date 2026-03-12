@@ -1,0 +1,19 @@
+- name: ansible shell vs coommand
+  hosts: local
+  connection: local
+  tasks:
+    - name: shell command
+      ansible.builtin.shell: cat /etc/passwd/ | grep root
+      register: shell_output
+  
+    - name: print shell output
+      ansible.builtin.debug:
+        msg: "The output of shell command is {{ shell_output }}"
+    
+    - name: command module
+      ansible.builtin.command: ls -l
+      register: file_list
+      
+    - name: print file list
+      ansible.builtin.debug:
+        msg: "The output of command module is {{ file_list }}"
