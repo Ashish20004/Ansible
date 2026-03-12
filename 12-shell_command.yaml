@@ -16,4 +16,4 @@
       
     - name: print file list
       ansible.builtin.debug:
-        msg: "The output of command module is {{ file_list }}"
+        msg: "The output of command module is {{ file_list }}"w
