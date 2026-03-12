@@ -1,0 +1,16 @@
+- name: Conditions in Ansible
+  hosts: local
+  connection: local
+  vars: 
+    num1: 10
+    num2: 20
+    is_valid: true
+  tasks:
+    - name: check if num1 is greater than num2
+      ansible.builtin.debug:
+        msg: "num1 is greater than num2"
+      when: num1 > num2
+    - name: check is valid or not 
+      ansible.builtin.debug:
+        msg: "The condition is not valid"
+      when: is_valid
