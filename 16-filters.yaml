@@ -18,5 +18,5 @@
        msg: "Topics are {{ Topics | split(',') }}"
 
     - name: Convert Map to list
-      ansible.buitin.debug:
+      ansible.builtin.debug:
        msg: "Details are {{ Details | dict2items }}"
