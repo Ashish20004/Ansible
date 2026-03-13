@@ -1,0 +1,11 @@
+- name: error handling in ansible
+  hosts: local
+  connection: local
+  vars:
+   num1: 10
+   num2: 0
+  tasks:
+   - name: division of two numbers
+     ansible.builtin.debug:
+       msg: "Result: {{ num1 / num2}}" 
+       ignore_errors: true
