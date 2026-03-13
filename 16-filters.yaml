@@ -3,6 +3,11 @@
   connection: local
   vars:
     Topics: Linux, Ansible, Terraform, Docker, Kubernetes
+    Details:
+      name: "Ashish"
+      Domian: "Devops"
+      Branch: "CSE"
+      Pursuing: "B.Tech"
   tasks:
     - name: ansible filters
       ansible.builtin.debug:
@@ -11,3 +16,7 @@
     - name: Split the string  into a list
       ansible.builtin.debug:
        msg: "Topics are {{ Topics | split(',') }}"
+
+    - name: Convert Map to list
+      ansible.buitin.debug:
+       msg: "Details are {{ Details | dict2items }}"
