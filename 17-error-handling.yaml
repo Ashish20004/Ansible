@@ -8,4 +8,4 @@
    - name: division of two numbers
      ansible.builtin.debug:
        msg: "Result: {{ num1 / num2}}" 
-       ignore_errors: true
+      
