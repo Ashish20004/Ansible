@@ -41,7 +41,14 @@
     - name: Convert String to UpperCase
       ansible.builtin.debug:
        msg: "Course name is {{ course | upper }}"
-       
+
     - name: Convert String to Title Case
       ansible.builtin.debug:
        msg: "Course name is {{ course | title }}"
+
+    - name: Setfact module to set the value of a variable
+      ansible.builtin.set_fact:
+       student_yaml: "{{ lookup('file', 'students.yaml' | from_yaml) }}"
+    - name: Print the student details
+      ansible.builtin.debug:
+        msg: "Student details are {{ student_yaml }}"
