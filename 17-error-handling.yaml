@@ -11,7 +11,7 @@
      ignore_errors: true
 
    - name: check user exits  or not
-     ansible.builtin.command: id roboshop
+     ansible.builtin.command: id catalyst
      register: out_put
      ignore_errors: true
 
@@ -22,6 +22,6 @@
   
    - name: create user if not exits 
      ansible.builtin.user:
-       name: roboshop
+       name: catalyst
        state: present
     
