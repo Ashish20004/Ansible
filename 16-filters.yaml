@@ -8,6 +8,14 @@
       Domian: "Devops"
       Branch: "CSE"
       Pursuing: "B.Tech"
+    TagsList:
+        [
+          {'key': 'name', 'value': 'Ashish'},
+          {'key': 'Domian', 'value': 'Devops'}, 
+          {'key': 'Branch', 'value': 'CSE'}, 
+          {'key': 'Pursuing', 'value': 'B.Tech'}
+        ]
+
   tasks:
     - name: ansible filters
       ansible.builtin.debug:
@@ -20,3 +28,7 @@
     - name: Convert Map to list
       ansible.builtin.debug:
        msg: "Details are {{ Details | dict2items }}"
+   
+    - name: Convert list to Map
+      ansible.builtin.debug:
+       msg: "TagLists are {{ TagsList | item2dict }}"
