@@ -31,4 +31,4 @@
    
     - name: Convert list to Map
       ansible.builtin.debug:
-       msg: "TagLists are {{ TagsList | item2dict }}"
+       msg: "TagLists are {{ TagsList | items2dict }}"
