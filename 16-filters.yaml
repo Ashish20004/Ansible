@@ -1,7 +1,13 @@
 - name: filters in ansible
   hosts: local
   connection: local
+  vars:
+    Topics: Linux, Ansible, Terraform, Docker, Kubernetes
   tasks:
     - name: ansible filters
       ansible.builtin.debug:
        msg: "Congratulations  {{ Greeting | default('Ashish')  }}"
+      
+    - name: Split the string  into a list
+      ansible.builtin.debug:
+       msg: "Topics are {{ Topics | split(',') }}"
