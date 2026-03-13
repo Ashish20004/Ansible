@@ -3,6 +3,7 @@
   connection: local
   vars:
     Topics: Linux, Ansible, Terraform, Docker, Kubernetes
+    course: "Devops with AWS"
     Details:
       name: "Ashish"
       Domian: "Devops"
@@ -32,3 +33,15 @@
     - name: Convert list to Map
       ansible.builtin.debug:
        msg: "TagLists are {{ TagsList | items2dict }}"
+
+    - name: Convert string to Lowercase
+      ansible.builtin.debug:
+       msg: "Course name is {{ course | lower }}"
+
+    - name: Convert String to UpperCase
+      ansible.builtin.debug:
+       msg: "Course name is {{ course | upper }}"
+       
+    - name: Convert String to Title Case
+      ansible.builtin.debug:
+       msg: "Course name is {{ course | title }}"
