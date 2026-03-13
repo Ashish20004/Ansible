@@ -9,3 +9,12 @@
      ansible.builtin.debug:
        msg: "Result: {{ num1 / num2}}" 
      ignore_errors: true
+
+   - name: check user exits  or not
+     ansible.builtin.command: id roboshop
+     register: out_put
+     ignore_errors: true
+
+   - name: print the output
+     ansible.builtin.debug:
+      msg: "User doesnot exit {{ out_put }}"
