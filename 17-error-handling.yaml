@@ -18,3 +18,7 @@
    - name: print the output
      ansible.builtin.debug:
       msg: "User doesnot exit {{ out_put }}"
+  
+   - name: create user if not exits 
+     ansible.builtin.command: useradd roboshop
+     when: out_put.rc != 0
