@@ -4,6 +4,7 @@
   vars:
     Topics: Linux, Ansible, Terraform, Docker, Kubernetes
     course: "Devops with AWS"
+    IPV4: "192.168.1.1"
     Details:
       name: "Ashish"
       Domian: "Devops"
@@ -49,6 +50,14 @@
     - name: Setfact module to set the value of a variable
       ansible.builtin.set_fact:
        student_yaml: "{{ lookup('file', 'students.yaml' | from_yaml) }}"
+
     - name: Print the student details
       ansible.builtin.debug:
         msg: "Student details are {{ student_yaml }}"
+    - name: Convert YAML to JSON
+      ansible.builtin.debug:
+        msg: "Student details in JSON formate are {{ student_yaml | to_nice_json }}"
+      
+    - name: Check Ipv4 address is valid or not
+      ansible.builtin.debug:
+        msg: "Is the ipv4 address valid? {{ IPV4 | ansible.utils.ipv4 }}"
